@@ -1,0 +1,27 @@
+/* components/tabs/tabs.wxss */
+.tabs{
+
+}
+
+.tabs_title{
+  display: flex;
+  width: 100%;
+}
+
+.table_title_item_select{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--themeColor);
+  padding: 15rpx 0rpx;
+  border-bottom: 5rpx solid currentColor
+}
+
+.table_title_item_normal{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15rpx 0rpx;
+}

@@ -1,0 +1,33 @@
+<view class="categoryView">
+	<searchInput></searchInput>
+
+	<view class="content">
+		<view class="left">
+			<scroll-view class="left-scroll" scroll-y scroll-top="{{scrollTop}}">
+				<view class="left-scroll-item" wx:for='{{categoryList}}' wx:key="cat_id" bindtap="leftSelectAction" data-selectIndex="{{index}}">
+					<view class="{{index==selectIndex ? 'left-scroll-item-title-active' : 'left-scroll-item-title'}}">{{item.cat_name}}</view>
+					<view class="left-scroll-item-line"></view>
+				</view>
+			</scroll-view>
+		</view>
+
+		<view class="right">
+			<scroll-view class="right-scroll" scroll-y scroll-top="{{scrollTop}}">
+				<view class="right-scroll-group" wx:for='{{contentList.children}}' wx:key="cat_id" bindtap="leftSelectAction" data-selectIndex="{{index}}">
+					<view class="right-scroll-group-title">/{{item.cat_name}}/</view>
+					<view class="right-scroll-group-content">
+						<navigator class="right-scroll-item" wx:for='{{item.children}}' wx:key="cat_id" url="/pages/goods_list/index?cid={{item.cat_id}}">
+							<image class="right-scroll-item-image" src="{{item.cat_icon}}" model="aspectFill"></image>
+							<view class="right-scroll-item-title">{{item.cat_name}}</view>
+						</navigator>
+						<!-- <view class="right-scroll-item" wx:for='{{item.children}}' wx:key="cat_id" bindtap="rightSelectAction" data-selectIndex="{{index}}">
+							<image class="right-scroll-item-image" src="{{item.cat_icon}}" model="aspectFill"></image>
+							<view class="right-scroll-item-title">{{item.cat_name}}</view>
+						</view> -->
+					</view>
+				</view>
+			</scroll-view>
+		</view>
+
+	</view>
+</view>

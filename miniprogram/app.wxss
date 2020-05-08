@@ -1,0 +1,12 @@
+@import "./style/iconfont.wxss";
+page,view,text{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+page{
+  /* 主题颜色 */
+  --themeColor:#eb4450;
+  /* 统一定义字体大小 当设计稿为375px时 1px = 2rpx*/
+  font-size: 28rpx;
+}

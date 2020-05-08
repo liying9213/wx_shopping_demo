@@ -1,0 +1,35 @@
+<view class="home">
+	<!-- 搜索框 -->
+	<searchInput></searchInput>
+</view>
+
+<view>
+	<!-- 轮播图 -->
+	<!-- swiper 存在默认的宽度和高度  100% 150rpx -->
+	<!-- image 存在默认宽度和高度  320rpx  240rpx-->
+	<swiper class="swiper" autoplay="true" circular="true" indicator-dots="true">
+		<swiper-item wx:for="{{swiperList}}" wx:for-item="item" wx:for-index="index" wx:key="goods_id" item-id="123" bindtap="swiperSelectAction">
+			<image class="swiper-image" mode="aspectFill" src="{{item.image_src}}"></image>
+		</swiper-item>
+	</swiper>
+</view>
+
+<view class="menu">
+	<!-- 导航 -->
+	<navigator class="menu-item" wx:for="{{menuList}}" wx:key="name" url="">
+		<image class="menu-item-image" mode="widthFix" src="{{item.image_src}}"></image>
+	</navigator>
+</view>
+
+<view class="content" wx:for="{{contentList}}" wx:key="floor_title">
+	<view class="content-item">
+		<view class="content-item-title">
+			<image class="content-item-title-image" src="{{item.floor_title.image_src}}" mode="widthFix"></image>
+		</view>
+		<view  class="content-item-content">
+			<navigator class="content-item-content-nav" wx:for="{{item.product_list}}" wx:key="name" >
+				<image class="content-item-content-image" src="{{item.image_src}}" mode="{{index==0?'widthFix':'scaleToFill'}}"></image>
+			</navigator>
+		</view>
+	</view>
+</view>
